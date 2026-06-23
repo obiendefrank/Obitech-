@@ -44,3 +44,17 @@
     }
   ]
     }
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self';"
+        }
+      ]
+    }
+  ]
+}

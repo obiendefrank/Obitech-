@@ -10,7 +10,7 @@
 <meta property="og:description" content="Protecing digital War and Equipping youths with digital skills ">
 <meta property="og:url" content="obitech hub">
       <meta http-equiv="Upgrade-Insecure-Requests" content="1">
-      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.example.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'">
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.example.com 'unsafe-inline' https://*.vercel-scripts.com https://*.vercel-insights.com; connect-src 'self' https://*.vercel-insights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'">
 <meta http-equiv="Cache-Control" content="max-age=31536000">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,6 +35,12 @@
     <link rel="stylesheet" href="assets/css/obi-edu-meeting.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
+    
+    <!-- Vercel Web Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
 
 <body>

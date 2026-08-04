@@ -1,7 +1,7 @@
 # Obitech hub
-Obitech Vert — Hello Page
+Obitech hub limited 
 
-A concise README for the Hello page of the Obitech Vert website. This file explains what the page does, how to run it locally, how to deploy, how to contribute, and common troubleshooting steps.
+A concise README for the obitech hub page of the website. This file explains what the page does, how to run it locally, how to deploy, how to contribute, and common troubleshooting steps.
 
 ---
 
@@ -24,7 +24,7 @@ Table of contents
 Overview
 
 Purpose  
-The Hello page is a simple, user-facing route that demonstrates the site’s styling, layout, and basic interactive elements. It serves as a landing/demo page for visitors and a quick verification point for developers.
+The obitech hub website is a simple, user-facing route that demonstrates the site’s styling, layout, and basic interactive elements. It serves as a landing/demo page for visitors and a quick verification point for developers.
 
 Audience  
 Visitors, QA testers, designers, and developers who want a quick preview of the site or a starting point for local development.
@@ -34,9 +34,9 @@ Visitors, QA testers, designers, and developers who want a quick preview of the 
 Live demo
 
 URL  
-https://obitech-vert.vercel.app/Hello
+https://obitech-vert.vercel.app/
 
-Open the URL in a browser to view the Hello page and interact with any visible controls.
+Open the URL in a browser to view the obitech hub and interact with any visible controls.
 
 ---
 
@@ -78,7 +78,7 @@ npm run dev
 or
 yarn dev
 `
-Open http://localhost:3000/Hello in your browser. The port may vary; check the terminal output.
+Open http://localhost:3000/ in your browser. The port may vary; check the terminal output.
 
 Build for production
 `bash
@@ -109,7 +109,7 @@ Typical layout
 `
 
 Key files
-- pages/Hello or src/pages/Hello — main page component for the Hello route.
+- pages/Home or src/pages/Home — main page component for the Hello route.
 - components/ — reusable UI components used by the Hello page.
 - styles/ — global and component styles.
 - public/ — static assets such as images and icons.
@@ -120,7 +120,7 @@ Key files
 Usage
 
 Viewing the page
-- Live: Visit https://obitech-vert.vercel.app/Hello.
+- Live: Visit https://obitech-vert.vercel.app/.
 - Local: Start the dev server and open http://localhost:3000/Hello.
 
 Interacting with the page
@@ -129,7 +129,7 @@ Interacting with the page
 - Resize the browser to verify responsive behavior.
 
 Editing content
-- Open the Hello page component file.
+- Open the obitech page component file.
 - Update the JSX/HTML for text changes.
 - Modify styles in the styles/ folder or component-level styles.
 

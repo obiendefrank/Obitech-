@@ -877,7 +877,7 @@ services
 
 /*
 ---------------------------------------------
-upcoming meetings
+upcoming Events
 ---------------------------------------------
 */
 
@@ -1560,22 +1560,22 @@ section.Events-page .pagination ul li a:hover {
   color: #fff;
 }
 
-.meeting-single-item .thumb {
+.Event-single-item .thumb {
   position: relative;
 }
 
-.meeting-single-item .thumb img {
+.Event-single-item .thumb img {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
 
-.meeting-single-item .thumb .price {
+.Event-single-item .thumb .price {
   position: absolute;
   left: 20px;
   top: 20px;
 }
 
-.meeting-single-item .thumb .price span {
+.Event-single-item .thumb .price span {
   font-size: 16px;
   color: #1f272b;
   font-weight: 600;
@@ -1584,14 +1584,14 @@ section.Events-page .pagination ul li a:hover {
   border-radius: 10px;
 }
 
-.meeting-single-item .down-content {
+.Event-single-item .down-content {
   background-color: #fff;
   padding: 40px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
 }
 
-.meeting-single-item .thumb .date {
+.Event-single-item .thumb .date {
   position: absolute;
   background-color: rgba(250,250,250,0.9);
   width: 80px;
@@ -1603,21 +1603,21 @@ section.Events-page .pagination ul li a:hover {
   top: 20px;
 }
 
-.meeting-single-item .thumb .date h6 {
+.Event-single-item .thumb .date h6 {
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 600;
   color: #a12c2f;
 }
 
-.meeting-single-item .thumb .date span {
+.Event-single-item .thumb .date span {
   display: block;
   color: #1f272b;
   font-size: 22px;
   margin-top: 7px;
 }
 
-.meeting-single-item .down-content h4 {
+.Event-single-item .down-content h4 {
   font-size: 22px;
   color: #1f272b;
   font-weight: 600;
@@ -1625,7 +1625,7 @@ section.Events-page .pagination ul li a:hover {
   margin-bottom: 15px;
 }
 
-.meeting-single-item .down-content h5 {
+.Event-single-item .down-content h5 {
   font-size: 18px;
   color: #1f272b;
   font-weight: 700;
@@ -1633,12 +1633,12 @@ section.Events-page .pagination ul li a:hover {
   margin-bottom: 15px;
 }
 
-.meeting-single-item .down-content p {
+.Event-single-item .down-content p {
   color: #1f272b;
   font-size: 14px;
 }
 
-.meeting-single-item .down-content p.description {
+.Event-single-item .down-content p.description {
   margin-top: 40px;
   padding-top: 40px;
   border-top: 1px solid #eee;
@@ -1647,33 +1647,33 @@ section.Events-page .pagination ul li a:hover {
   border-bottom: 1px solid #eee;
 }
 
-.meeting-single-item .down-content .share {
+.Event-single-item .down-content .share {
   margin-top: 40px;
   padding-top: 40px;
   border-top: 1px solid #eee;
 }
 
-.meeting-single-item .down-content .share h5 {
+.Event-single-item .down-content .share h5 {
   float: left;
   margin-right: 10px;
   margin-bottom: 0px;
 }
 
-.meeting-single-item .down-content .share ul li {
+.Event-single-item .down-content .share ul li {
   display: inline;
 }
 
-.meeting-single-item .down-content .share ul li a {
+.Event-single-item .down-content .share ul li a {
   font-size: 14px;
   color: #1f272b;
   transition: all .3s;
 }
 
-.meeting-single-item .down-content .share ul li a:hover {
+.Event-single-item .down-content .share ul li a:hover {
   color: #f5a425;
 }
 
-/* Meeting item column */
+/* Event item column */
 .obitech-item-col {
 	width: 31%;
 }

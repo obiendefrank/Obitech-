@@ -1,10 +1,4 @@
-/*
 
-TemplateMo 569 Edu Meeting
-
-https://templatemo.com/tm-569-edu-meeting
-
-*/
 
 /* ---------------------------------------------
 Table of contents
@@ -887,7 +881,7 @@ upcoming meetings
 ---------------------------------------------
 */
 
-section.upcoming-meetings {
+section.upcoming-Events {
   background-image: url(../images/meetings-bg.jpg);
   background-position: center center;
   background-attachment: fixed;
@@ -897,18 +891,18 @@ section.upcoming-meetings {
   padding-bottom: 110px;
 }
 
-section.upcoming-meetings .section-heading {
+section.upcoming-Events .section-heading {
   text-align: center;
 }
 
-section.upcoming-meetings .categories {
+section.upcoming-Events .categories {
   background-color: #fff;
   border-radius: 20px;
   padding: 40px;
   margin-right: 45px;
 }
 
-section.upcoming-meetings .categories h4 {
+section.upcoming-Events .categories h4 {
   font-size: 18px;
   font-weight: 600;
   color: #1f272b;
@@ -917,53 +911,53 @@ section.upcoming-meetings .categories h4 {
   border-bottom: 1px solid #eee;
 }
 
-section.upcoming-meetings .categories ul li {
+section.upcoming-Events .categories ul li {
   display: inline-block;
   margin-bottom: 15px;
 }
 
-section.upcoming-meetings .categories ul li a {
+section.upcoming-Events .categories ul li a {
   font-size: 15px;
   color: #1f272b;
   font-weight: 500;
   transition: all .3s;
 }
 
-section.upcoming-meetings .categories ul li a:hover {
+section.upcoming-Events .categories ul li a:hover {
   color: #a12c2f;
 }
 
-section.upcoming-meetings .categories .main-button-red {
+section.upcoming-Events .categories .main-button-red {
   border-top: 1px solid #eee;
   padding-top: 30px;
   margin-top: 15px;
 }
 
-section.upcoming-meetings .categories .main-button-red a {
+section.upcoming-Events .categories .main-button-red a {
   width: 100%;
   text-align: center;
 }
 
-.meeting-item {
+.Event-item {
   margin-bottom: 30px;
 }
 
-.meeting-item .thumb {
+.Event-item .thumb {
   position: relative;
 }
 
-.meeting-item .thumb img {
+.Event-item .thumb img {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
 
-.meeting-item .thumb .price {
+.Event-item .thumb .price {
   position: absolute;
   left: 20px;
   top: 20px;
 }
 
-.meeting-item .thumb .price span {
+.Event-item .thumb .price span {
   font-size: 16px;
   color: #1f272b;
   font-weight: 600;
@@ -972,35 +966,35 @@ section.upcoming-meetings .categories .main-button-red a {
   border-radius: 10px;
 }
 
-.meeting-item .down-content {
+.Event-item .down-content {
   background-color: #fff;
   padding: 30px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
 }
 
-.meeting-item .down-content .date {
+.Event-item .down-content .date {
   float: left;
   text-align: center;
   display: inline-block;
   margin-right: 20px;
 }
 
-.meeting-item .down-content .date h6 {
+.Event-item .down-content .date h6 {
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 600;
   color: #a12c2f;
 }
 
-.meeting-item .down-content .date span {
+.Event-item .down-content .date span {
   display: block;
   color: #1f272b;
   font-size: 22px;
   margin-top: 7px;
 }
 
-.meeting-item .down-content h4 {
+.Event-item .down-content h4 {
   font-size: 18px;
   color: #1f272b;
   font-weight: 600;
@@ -1008,7 +1002,7 @@ section.upcoming-meetings .categories .main-button-red a {
   margin-bottom: 15px;
 }
 
-.meeting-item .down-content p {
+.Event-item .down-content p {
   margin-left: 50px;
   color: #1f272b;
   font-size: 14px;
@@ -1490,7 +1484,7 @@ upcoming meetings page
 ---------------------------------------------
 */
 
-section.meetings-page {
+section.Events-page {
   background-image: url(../images/meetings-page-bg.jpg);
   background-position: center center;
   background-attachment: fixed;
@@ -1500,12 +1494,12 @@ section.meetings-page {
   padding-bottom: 0px;
 }
 
-section.meetings-page .filters {
+section.Events-page .filters {
   text-align: center;
   margin-bottom: 60px;
 }
 
-section.meetings-page .filters li {
+section.Events-page .filters li {
   font-size: 13px;
   color: #a12c2f;
   background-color: #fff;
@@ -1519,24 +1513,24 @@ section.meetings-page .filters li {
   margin: 0px 3px;
 }
 
-section.meetings-page .filters ul li.active,
-section.meetings-page .filters ul li:hover {
+section.Events-page .filters ul li.active,
+section.Events-page .filters ul li:hover {
   background-color: #a12c2f;
   color: #fff;
 }
 
-section.meetings-page .pagination {
+section.Events-page .pagination {
   text-align: center;
   width: 100%;
   margin-top: 30px;
   display: inline-block;
 }
 
-section.meetings-page .pagination ul li {
+section.Events-page .pagination ul li {
   display: inline-block;
 }
 
-section.meetings-page .pagination ul li a {
+section.Events-page .pagination ul li a {
   width: 40px;
   height: 40px;
   background-color: #fff;
@@ -1550,18 +1544,18 @@ section.meetings-page .pagination ul li a {
   transition: all .3s;
 }
 
-section.meetings-page .main-button-red {
+section.Events-page .main-button-red {
   text-align: center;
 }
 
-section.meetings-page .main-button-red a {
+section.Events-page .main-button-red a {
   padding: 12px 60px;
   text-align: center;
   margin-top: 30px;
 }
 
-section.meetings-page .pagination ul li.active a,
-section.meetings-page .pagination ul li a:hover {
+section.Events-page .pagination ul li.active a,
+section.Events-page .pagination ul li a:hover {
   background-color: #a12c2f;
   color: #fff;
 }
@@ -1680,18 +1674,18 @@ section.meetings-page .pagination ul li a:hover {
 }
 
 /* Meeting item column */
-.templatemo-item-col {
+.obitech-item-col {
 	width: 31%;
 }
 
 @media (max-width: 992px) {
-	.templatemo-item-col {
+	.obitech-item-col {
 		width: 45%;
 	}
 }
 
 @media (max-width: 767px) {
-	.templatemo-item-col {
+	.obitech-item-col {
 		width: 100%;
 	}
 }
@@ -1782,11 +1776,11 @@ responsive
     margin-top: 60px;
   }
 
-  section.upcoming-meetings {
+  section.upcoming-Events {
     padding-top: 400px;
   }
 
-  section.upcoming-meetings .categories {
+  section.upcoming-Events .categories {
     margin-right: 0px;
     margin-bottom: 30px;
   }

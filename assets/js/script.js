@@ -4,7 +4,6 @@
 
   // Overlay warning system
   function showWarning(msg){
-    // Remove existing overlay if any
     const old = document.getElementById("warning-overlay");
     if(old) old.remove();
 
@@ -26,11 +25,12 @@
     document.body.appendChild(overlay);
   }
 
-  // Secret element + Shadow DOM
+  // Secret element + Shadow DOM watermark
   const secretElement = document.getElementById("secret-element");
   if(secretElement){
     const shadowRoot = secretElement.attachShadow({mode:"closed"});
-    shadowRoot.innerHTML = "<p>Hidden text inside Shadow DOM</p>";
+    // Invisible watermark (not visible to users, hidden from DevTools)
+    shadowRoot.innerHTML = "<span style='display:none'>© OBITECH Secure Layer</span>";
   }
 
   // MutationObserver

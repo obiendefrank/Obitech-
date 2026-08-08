@@ -1,5 +1,5 @@
 (function(){
-  // Overlay warning system
+  // Overlay warning system (non-destructive)
   function showWarning(msg){
     const old = document.getElementById("warning-overlay");
     if(old) old.remove();
@@ -22,19 +22,12 @@
     document.body.appendChild(overlay);
   }
 
-  // Secret element + Shadow DOM (hidden watermark)
-  const secretElement = document.getElementById("secret-element");
-  if(secretElement){
-    const shadowRoot = secretElement.attachShadow({mode:"closed"});
-    shadowRoot.innerHTML = "<span style='display:none'>© OBITECH Secure Layer</span>";
-  }
-
-  // MutationObserver (lighter scope)
+  // MutationObserver (lighter scope, no DOM overwrite)
   const observer = new MutationObserver(() => {
     showWarning("Hack detected. Page locked!");
     setTimeout(()=>window.location.reload(),1500);
   });
-  observer.observe(document.body, { childList:true }); // removed subtree:true
+  observer.observe(document.body, { childList:true });
 
   // Block copy, select all, save
   document.addEventListener("keydown", e => {
@@ -47,7 +40,7 @@
     if(end-start>100){showWarning("Inspection not allowed!");}
   },1000);
 
-  // Disable console
+  // Disable console (non-destructive)
   (function(){const noop=()=>{};["log","warn","error","clear"].forEach(fn=>window.console[fn]=noop);})();
 
   // DevTools property trap
@@ -61,6 +54,9 @@
   // Prevent selection & dragging
   document.addEventListener("selectstart",e=>e.preventDefault());
   document.addEventListener("dragstart",e=>e.preventDefault());
+
+  // Protect function source
+  (function(fn){fn.toString=()=> "function () { [native code] }";})(function(){});
 
   // Console overload (slowed down)
   setInterval(()=>{
@@ -78,7 +74,7 @@
   // Constant console clearing
   setInterval(()=>console.clear(),2000);
 
-  // DevTools detection via window size
+  // DevTools detection via window size (overlay only)
   function detectDevTools(){
     const threshold=160;
     if(window.outerWidth-window.innerWidth>threshold||window.outerHeight-window.innerHeight>threshold){

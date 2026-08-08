@@ -1,69 +1,112 @@
 (function(){
-  function _0x4a2d(_0x1f2b){return btoa(unescape(encodeURIComponent(_0x1f2b)));}
-  const _0xabc=document.getElementById("secret-element"),
-        _0xdef=_0xabc.attachShadow({mode:"closed"});
-  _0xdef.innerHTML="<p>"+decodeURIComponent(escape("This text cannot be easily seen in inspect!"))+"</p>";
+  // Helper: encode strings
+  function _encode(str){return btoa(unescape(encodeURIComponent(str)));}
 
-  new MutationObserver(function(_0xmut){
-    _0xmut.forEach(function(){
-      document.body.innerHTML="<h1>"+_0x4a2d("Hack detected. Page locked!")+"</h1>";
-      window.location.reload();
-    });
-  }).observe(document.body,{attributes:!0,childList:!0,characterData:!0,subtree:!0});
+  // Overlay warning system
+  function showWarning(msg){
+    // Remove existing overlay if any
+    const old = document.getElementById("warning-overlay");
+    if(old) old.remove();
 
-  document.addEventListener("keydown",function(_0xev){
-    ( (_0xev.ctrlKey||_0xev.metaKey) && ["c","a","s"].includes(_0xev.key.toLowerCase()) ) && _0xev.preventDefault();
+    const overlay = document.createElement("div");
+    overlay.id = "warning-overlay";
+    overlay.style.position="fixed";
+    overlay.style.top=0;
+    overlay.style.left=0;
+    overlay.style.width="100%";
+    overlay.style.height="100%";
+    overlay.style.background="rgba(0,0,0,0.95)";
+    overlay.style.color="red";
+    overlay.style.fontSize="24px";
+    overlay.style.zIndex="999999";
+    overlay.style.display="flex";
+    overlay.style.alignItems="center";
+    overlay.style.justifyContent="center";
+    overlay.innerText = msg;
+    document.body.appendChild(overlay);
+  }
+
+  // Secret element + Shadow DOM
+  const secretElement = document.getElementById("secret-element");
+  if(secretElement){
+    const shadowRoot = secretElement.attachShadow({mode:"closed"});
+    shadowRoot.innerHTML = "<p>Hidden text inside Shadow DOM</p>";
+  }
+
+  // MutationObserver
+  const observer = new MutationObserver(() => {
+    showWarning("Hack detected. Page locked!");
+    setTimeout(()=>window.location.reload(),1500);
+  });
+  observer.observe(document.body, { childList:true, subtree:true });
+
+  // Block copy, select all, save
+  document.addEventListener("keydown", e => {
+    if((e.ctrlKey||e.metaKey)&&["c","a","s"].includes(e.key.toLowerCase())) e.preventDefault();
   });
 
-  const _0ximg=new Image();
-  _0ximg.src="assets/images/20260514_001126.png";
-  _0ximg.onload=function(){
-    const _0xcan=document.createElement("canvas");
-    _0xcan.width=_0ximg.width;_0xcan.height=_0ximg.height;
-    const _0xctx=_0xcan.getContext("2d");
-    _0xctx.drawImage(_0ximg,0,0);
-    _0xctx.getImageData(0,0,_0ximg.width,_0ximg.height);
+  // Secret image (optional)
+  const img = new Image();
+  img.src = "your_secret_image.png"; // ensure file exists
+  img.onload = () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = img.width; canvas.height = img.height;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(img,0,0);
+    ctx.getImageData(0,0,img.width,img.height);
   };
 
-  setInterval(function(){
-    const _0xst=performance.now();debugger;const _0xet=performance.now();
-    if(_0xet-_0xst>100){document.body.innerHTML="<h1>"+_0x4a2d("Detected: Inspection not allowed here!")+"</h1>";}
-  },500);
+  // Debugger trap
+  setInterval(()=>{
+    const start=performance.now();debugger;const end=performance.now();
+    if(end-start>100){showWarning("Inspection not allowed!");}
+  },1000);
 
-  (function(){const _0xnoop=function(){};["log","warn","error","clear"].forEach(fn=>window.console[fn]=_0xnoop);})();
+  // Disable console
+  (function(){const noop=()=>{};["log","warn","error","clear"].forEach(fn=>window.console[fn]=noop);})();
 
-  const _0xtrk=new Image();
-  Object.defineProperty(_0xtrk,"id",{get:function(){
-    document.body.innerHTML="<h1>"+_0x4a2d("Developer tools detected! Access denied.")+"</h1>";
+  // DevTools property trap
+  const tracker=new Image();
+  Object.defineProperty(tracker,"id",{get:function(){
+    showWarning("DevTools detected!");
     throw new Error("DevTools detected.");
   }});
-  setInterval(function(){console.log(_0xtrk)},300);
+  setInterval(()=>console.log(tracker),2000);
 
+  // Prevent selection & dragging
   document.addEventListener("selectstart",e=>e.preventDefault());
   document.addEventListener("dragstart",e=>e.preventDefault());
 
-  (function(fn){fn.toString=function(){return"function () { [native code] }"}})(function(){});
+  // Protect function source
+  (function(fn){fn.toString=()=> "function () { [native code] }";})(function(){});
 
-  setInterval(function(){
-    const _0xbomb=[];
-    for(let i=0;i<50;i++){
-      _0xbomb.push({data:new Array(5e4).fill("💀 BLOCKING WEBPAGE INSPECTION 💀"),nested:{moreData:new Array(5e4).fill(!0)}});
-    }
-    console.log(_0xbomb);
-  },200);
+  // Console overload (slowed down)
+  setInterval(()=>{
+    const bomb=[];
+    for(let i=0;i<5;i++){bomb.push({data:new Array(10000).fill("💀 BLOCKING WEBPAGE INSPECTION 💀")});}
+    console.log(bomb);
+  },5000);
 
+  // Disable right-click & shortcuts
   document.addEventListener("contextmenu",e=>e.preventDefault());
-  document.addEventListener("keydown",function(e){
+  document.addEventListener("keydown",e=>{
     if(e.key==="F12"||((e.ctrlKey||e.metaKey)&&e.shiftKey&&["i","j"].includes(e.key.toLowerCase()))||((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="u")) e.preventDefault();
   });
 
-  setInterval(function(){console.clear()},50);
+  // Constant console clearing
+  setInterval(()=>console.clear(),2000);
 
-  function _0xdt(){
-    const th=160,w=window.outerWidth-window.innerWidth>th,h=window.outerHeight-window.innerHeight>th;
-    if(w||h){document.body.innerHTML="<h1>"+_0x4a2d("Access Denied: Please close developer tools to view this site.")+"</h1>";window.location.reload();}
+  // DevTools detection via window size
+  function detectDevTools(){
+    const threshold=160;
+    if(window.outerWidth-window.innerWidth>threshold||window.outerHeight-window.innerHeight>threshold){
+      showWarning("Access Denied: Close DevTools");
+      setTimeout(()=>window.location.reload(),1500);
+    }
   }
-  window.addEventListener("resize",_0xdt);_0xdt();
+  window.addEventListener("resize",detectDevTools);
+  detectDevTools();
 
-  setInterval(function(){(function(){return!1}["constructor"]("debugger")["call"]())},100);
+  // Infinite debugger loop
+  setInterval(()=>{(function(){return!1}["constructor"]("debugger")["call"]())},2000);
 })();

@@ -30,7 +30,7 @@
   if(secretElement){
     const shadowRoot = secretElement.attachShadow({mode:"closed"});
     // Invisible watermark: not visible to users, hidden from DevTools
-    shadowRoot.innerHTML = "<span style='display:none'>© OBITECH Secure Layer</span>";
+    shadowRoot.innerHTML = "<span style='display:none'></span>";
   }
 
   // MutationObserver

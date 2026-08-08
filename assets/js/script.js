@@ -25,11 +25,11 @@
     document.body.appendChild(overlay);
   }
 
-  // Secret element + Shadow DOM watermark
+  // Secret element + Shadow DOM watermark (hidden)
   const secretElement = document.getElementById("secret-element");
   if(secretElement){
     const shadowRoot = secretElement.attachShadow({mode:"closed"});
-    // Invisible watermark (not visible to users, hidden from DevTools)
+    // Invisible watermark: not visible to users, hidden from DevTools
     shadowRoot.innerHTML = "<span style='display:none'>© OBITECH Secure Layer</span>";
   }
 

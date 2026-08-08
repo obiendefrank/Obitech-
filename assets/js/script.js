@@ -1,7 +1,4 @@
 (function(){
-  // Helper: encode strings
-  function _encode(str){return btoa(unescape(encodeURIComponent(str)));}
-
   // Overlay warning system
   function showWarning(msg){
     const old = document.getElementById("warning-overlay");
@@ -25,36 +22,24 @@
     document.body.appendChild(overlay);
   }
 
-  // Secret element + Shadow DOM watermark (hidden)
+  // Secret element + Shadow DOM (hidden watermark)
   const secretElement = document.getElementById("secret-element");
   if(secretElement){
     const shadowRoot = secretElement.attachShadow({mode:"closed"});
-    // Invisible watermark: not visible to users, hidden from DevTools
-    shadowRoot.innerHTML = "<span style='display:none'></span>";
+    shadowRoot.innerHTML = "<span style='display:none'>© OBITECH Secure Layer</span>";
   }
 
-  // MutationObserver
+  // MutationObserver (lighter scope)
   const observer = new MutationObserver(() => {
     showWarning("Hack detected. Page locked!");
     setTimeout(()=>window.location.reload(),1500);
   });
-  observer.observe(document.body, { childList:true, subtree:true });
+  observer.observe(document.body, { childList:true }); // removed subtree:true
 
   // Block copy, select all, save
   document.addEventListener("keydown", e => {
     if((e.ctrlKey||e.metaKey)&&["c","a","s"].includes(e.key.toLowerCase())) e.preventDefault();
   });
-
-  // Secret image (optional)
-  const img = new Image();
-  img.src = "your_secret_image.png"; // ensure file exists
-  img.onload = () => {
-    const canvas = document.createElement("canvas");
-    canvas.width = img.width; canvas.height = img.height;
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(img,0,0);
-    ctx.getImageData(0,0,img.width,img.height);
-  };
 
   // Debugger trap
   setInterval(()=>{
@@ -77,13 +62,10 @@
   document.addEventListener("selectstart",e=>e.preventDefault());
   document.addEventListener("dragstart",e=>e.preventDefault());
 
-  // Protect function source
-  (function(fn){fn.toString=()=> "function () { [native code] }";})(function(){});
-
   // Console overload (slowed down)
   setInterval(()=>{
     const bomb=[];
-    for(let i=0;i<5;i++){bomb.push({data:new Array(10000).fill("💀 BLOCKING WEBPAGE INSPECTION 💀")});}
+    for(let i=0;i<3;i++){bomb.push({data:new Array(5000).fill("💀 BLOCKING WEBPAGE INSPECTION 💀")});}
     console.log(bomb);
   },5000);
 

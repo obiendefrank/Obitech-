@@ -16,7 +16,7 @@
   });
 
   const _0ximg=new Image();
-  _0ximg.src="assets/image/logo.png";
+  _0ximg.src="assets/images/20260514_001126.png";
   _0ximg.onload=function(){
     const _0xcan=document.createElement("canvas");
     _0xcan.width=_0ximg.width;_0xcan.height=_0ximg.height;
